@@ -48,7 +48,6 @@ html, body {
     justify-content: center;
     font-size: 40px;
     align-items: flex-start;
-    
 }
 
 .cubo1{transition: width 2s, height 2s, background-color 2s,transform 5s, opacity 6s; }
@@ -144,4 +143,32 @@ animation-duration: 3s;
     100% {
         transform: rotate(0deg);
     }
+}
+
+/*Menú*/
+.Menu{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+}
+.Menu ul{
+    display: flex;
+    width: min-content;
+    height: min-content;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline-start: 0;
+}
+.Menu ul li{
+    background-color: rgb(158, 245, 131);
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    width: auto;
+    margin: 10px;
+    padding: 10px 15px;
+    height: 90%;
+    border-radius: 20px;
 }
