@@ -5,7 +5,7 @@ html, body {
     width: 100%;
     flex-direction: column;
 }
-
+/*Titulo-cabecera*/
 .container{
     position: relative;
     display: flex;
@@ -37,6 +37,97 @@ html, body {
     align-items: center;
 }
 
+
+/*Menú*/
+.Menu{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+}
+.Menu ul{
+    display: flex;
+    width: min-content;
+    height: min-content;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline-start: 0;
+}
+.Menu ul li{
+    background-color: rgb(158, 245, 131);
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    width: auto;
+    margin: 10px;
+    padding: 10px 15px;
+    height: 90%;
+    border-radius: 20px;
+    transition: border 2s, background-color 2s, box-shadow 1s ;
+}
+.Menu ul li:hover{
+    background-color: rgb(117, 172, 62);
+    border: 1px solid green;
+    box-shadow: 4px 4px 14px 0px rgba(19, 111, 216, 0.30);
+}
+
+
+/*Section Giros*/
+
+#giros{
+    display: flex;
+    width: 99%;
+    height: min-content;
+    justify-content: space-around;
+    border: 1px solid blueviolet;
+}
+.card{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: skyblue;
+    margin: 20px;
+}
+.transiciones{
+    display: grid;
+    width: 99%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 15px;
+    border: 1px solid sandybrown;
+}
+.card2{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    background-color: skyblue;
+    margin: 20px;
+}
+@media screen and (min-width:421px) and (max-width:800px){
+    .transiciones{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width:375px) and (max-width:420px){
+    .transiciones{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*Cubos*/
 .cubo-P{
     display: flex;
     width: 200px;
@@ -98,9 +189,6 @@ animation-duration: 3s;
 }
 
 
-
-
-
 /* animacion */
 @keyframes slidein {
     from {
@@ -142,32 +230,4 @@ animation-duration: 3s;
     100% {
         transform: rotate(0deg);
     }
-}
-
-/*Menú*/
-.Menu{
-    display: flex;
-    width: 90%;
-    justify-content: center;
-}
-.Menu ul{
-    display: flex;
-    width: min-content;
-    height: min-content;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline-start: 0;
-}
-.Menu ul li{
-    background-color: rgb(158, 245, 131);
-    display: flex;
-    align-items: center;
-    list-style: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    width: auto;
-    margin: 10px;
-    padding: 10px 15px;
-    height: 90%;
-    border-radius: 20px;
 }
