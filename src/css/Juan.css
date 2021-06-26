@@ -5,7 +5,7 @@ html, body {
     width: 100%;
     flex-direction: column;
 }
-/*Titulo-cabecera*/
+
 .container{
     position: relative;
     display: flex;
@@ -37,112 +37,6 @@ html, body {
     align-items: center;
 }
 
-
-/*Menú*/
-
-.Menu{
-    display: flex;
-    width: 90%;
-    justify-content: center;
-}
-.Menu ul{
-    display: grid;
-    width: min-content;
-    height: min-content;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline-start: 0;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 150px;
-    row-gap: 150px;
-}
-.Menu ul li{
-    background-color: rgb(158, 245, 131);
-    display: flex;
-    align-items: center;
-    list-style: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    width: auto;
-    margin: 10px;
-    padding: 10px 15px;
-    height: 90%;
-    border-radius: 20px;
-    transition: border 2s, background-color 2s, box-shadow 1s ;
-}
-.Menu ul li:hover{
-    background-color: rgb(117, 172, 62);
-    border: 1px solid green;
-    box-shadow: 4px 4px 14px 0px rgba(19, 111, 216, 0.30);
-}
-
-
-/*Section Giros*/
-
-#giros{
-    display: flex;
-    width: 99%;
-    height: min-content;
-    justify-content: space-around;
-    border: 1px solid blueviolet;
-}
-.card{
-    display: flex;
-    width: 160px;
-    height: 160px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: skyblue;
-    margin: 20px;
-}
-
-.card2{
-    display: flex;
-    width: 160px;
-    height: 160px;
-    align-items: center;
-    justify-content: center;
-    justify-self: center;
-    align-self: center;
-    text-align: center;
-    background-color: skyblue;
-    margin: 20px;
-    transition: transform 3s;
-}
-
-
-.transiciones, .giros{
-    overflow-x: hidden;
-    display: grid;
-    width: 99%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    grid-template-rows: auto;
-    column-gap: 10px;
-    row-gap: 15px;
-    border: 1px solid sandybrown;
-}
-@media screen and (min-width:421px) and (max-width:800px){
-    .transiciones, .giros{
-        grid-template-columns: 1fr 1fr;
-    }
-    .Menu ul {
-        grid-template-columns: 1fr 1fr;
-        column-gap: 50px;
-        row-gap: 55px;
-    }
-}
-
-@media screen and (min-width:375px) and (max-width:420px){
-    .transiciones, .giros{
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/*Cubos*/
 .cubo-P{
     display: flex;
     width: 200px;
@@ -154,6 +48,7 @@ html, body {
     justify-content: center;
     font-size: 40px;
     align-items: flex-start;
+    
 }
 
 .cubo1{transition: width 2s, height 2s, background-color 2s,transform 5s, opacity 6s; }
@@ -204,6 +99,9 @@ animation-duration: 3s;
 }
 
 
+
+
+
 /* animacion */
 @keyframes slidein {
     from {
@@ -245,132 +143,4 @@ animation-duration: 3s;
     100% {
         transform: rotate(0deg);
     }
-}
-@keyframes infinito {
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}
-@keyframes Llegadaderecha {
-    0%{
-        opacity: 0;
-        transform: translateX(1000px);
-    }
-    60%{
-        opacity: 0.8;
-        transform: translateX(-80px);
-    }
-    80%{
-        opacity: 0.9;
-        transform: translateX(15px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-@keyframes Llegadaizquierda{
-    0%{
-        opacity: 0;
-        transform: translateX(-1000px);
-    }
-    60%{
-        opacity: 0.8;
-        transform: translateX(80px);
-    }
-    80%{
-        opacity: 0.9;
-        transform: translateX(-15px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-@keyframes Llegadaabajo{
-    0%{
-        opacity: 0;
-        transform: translateY(1000px);
-    }
-    60%{
-        opacity: 0.8;
-        transform: translateY(-80px);
-    }
-    80%{
-        opacity: 0.9;
-        transform: translateY(15px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes Llegadaarriba{
-    0%{
-        opacity: 0;
-        transform: translateY(-1000px);
-    }
-    60%{
-        opacity: 0.8;
-        transform: translateY(80px);
-    }
-    80%{
-        opacity: 0.9;
-        transform: translateY(-15px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes rotation {
-    0% {
-      transform:rotate(0deg);
-    }
-    100% {
-      transform:rotate(360deg);
-    }
-  }
-
-/*GIROS*/
-.giro_completo:hover{
-    transform: rotate(360deg);
-}
-.giro_completo_left:hover{
-    transform: rotate(-360deg);
-}
-.medio_giro_completo_right:hover{
-    transform: rotate(180deg);
-}
-.medio_giro_completo_left:hover{
-    transform: rotate(-180deg);
-}
-.giroinfinito{
-	animation-name: rotation;
-	animation-duration: 3s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-}
-
-
-/*TRANSICIONES*/
-
-.slideRight{
-    animation-name: Llegadaderecha;
-    animation-duration: 3s;
-}
-.slideLeft{
-    animation-name: Llegadaizquierda;
-    animation-duration: 3s;
-}
-.slideBottom{
-    animation-name: Llegadaabajo;
-    animation-duration: 3s;
-}
-.slideTop{
-    animation-name: Llegadaarriba;
-    animation-duration: 3s;
 }
