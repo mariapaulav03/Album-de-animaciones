@@ -39,18 +39,22 @@ html, body {
 
 
 /*Menú*/
+
 .Menu{
     display: flex;
     width: 90%;
     justify-content: center;
 }
 .Menu ul{
-    display: flex;
+    display: grid;
     width: min-content;
     height: min-content;
     justify-content: space-between;
     align-items: center;
     padding-inline-start: 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 150px;
+    row-gap: 150px;
 }
 .Menu ul li{
     background-color: rgb(158, 245, 131);
@@ -92,17 +96,7 @@ html, body {
     background-color: skyblue;
     margin: 20px;
 }
-.transiciones{
-    display: grid;
-    width: 99%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    grid-template-rows: auto;
-    column-gap: 10px;
-    row-gap: 15px;
-    border: 1px solid sandybrown;
-}
+
 .card2{
     display: flex;
     width: 160px;
@@ -114,14 +108,35 @@ html, body {
     text-align: center;
     background-color: skyblue;
     margin: 20px;
+    transition: transform 3s;
+}
+
+
+.transiciones, .giros{
+    overflow-x: hidden;
+    display: grid;
+    width: 99%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 15px;
+    border: 1px solid sandybrown;
 }
 @media screen and (min-width:421px) and (max-width:800px){
-    .transiciones{
+    .transiciones, .giros{
         grid-template-columns: 1fr 1fr;
     }
+    .Menu ul {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
+        row-gap: 55px;
+    }
 }
+
 @media screen and (min-width:375px) and (max-width:420px){
-    .transiciones{
+    .transiciones, .giros{
         grid-template-columns: 1fr;
     }
 }
@@ -230,4 +245,132 @@ animation-duration: 3s;
     100% {
         transform: rotate(0deg);
     }
+}
+@keyframes infinito {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes Llegadaderecha {
+    0%{
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateX(-80px);
+    }
+    80%{
+        opacity: 0.9;
+        transform: translateX(15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes Llegadaizquierda{
+    0%{
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateX(80px);
+    }
+    80%{
+        opacity: 0.9;
+        transform: translateX(-15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes Llegadaabajo{
+    0%{
+        opacity: 0;
+        transform: translateY(1000px);
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateY(-80px);
+    }
+    80%{
+        opacity: 0.9;
+        transform: translateY(15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes Llegadaarriba{
+    0%{
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+    60%{
+        opacity: 0.8;
+        transform: translateY(80px);
+    }
+    80%{
+        opacity: 0.9;
+        transform: translateY(-15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes rotation {
+    0% {
+      transform:rotate(0deg);
+    }
+    100% {
+      transform:rotate(360deg);
+    }
+  }
+
+/*GIROS*/
+.giro_completo:hover{
+    transform: rotate(360deg);
+}
+.giro_completo_left:hover{
+    transform: rotate(-360deg);
+}
+.medio_giro_completo_right:hover{
+    transform: rotate(180deg);
+}
+.medio_giro_completo_left:hover{
+    transform: rotate(-180deg);
+}
+.giroinfinito{
+	animation-name: rotation;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+
+/*TRANSICIONES*/
+
+.slideRight{
+    animation-name: Llegadaderecha;
+    animation-duration: 3s;
+}
+.slideLeft{
+    animation-name: Llegadaizquierda;
+    animation-duration: 3s;
+}
+.slideBottom{
+    animation-name: Llegadaabajo;
+    animation-duration: 3s;
+}
+.slideTop{
+    animation-name: Llegadaarriba;
+    animation-duration: 3s;
 }
