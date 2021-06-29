@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
+
 html, body {
     margin: 0;
     padding: 0;
@@ -374,3 +376,102 @@ animation-duration: 3s;
     animation-name: Llegadaarriba;
     animation-duration: 3s;
 }
+/*Zoom*/
+
+.zoom{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid red;
+    width: 50%;
+    padding: 20px 0;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+.Zoomin:hover{
+    transform: scale(1.5);
+}
+.Zoomout:hover{
+    transform: scale(0.1);
+}
+/*Animaciones*/
+.animaciones{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid red;
+    width: 99%;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding-left: 700px;
+}
+.imag img:hover{
+    animation: translate-3d 3s 1;
+    backface-visibility: visible;
+  }
+  @keyframes translate-3d{
+    40%{
+      transform: perspective(300px) translateZ(120px) rotateY(170deg);
+    }
+    50%{
+      transform: perspective(300px) translateZ(120px) rotateY(190deg);
+    }
+    80%{
+      transform: perspective(300px) translateZ(0px) rotateY(360deg)
+    }
+    100%{
+      transform: perspective(300px) rotateY(360deg);    
+    }
+  }
+
+  span {
+    transform: translate(-50%, -50%);
+    display: grid;
+    color: #c55d5d;
+    font-size: 124px;
+    letter-spacing: 8px;
+    cursor: pointer;
+  }
+
+  span::before {
+    content: "PAULIS";
+    position: absolute;
+    color: transparent;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 2px,
+      rgb(206, 152, 152) 2px,
+      rgb(206, 152, 152) 4px
+    );
+    -webkit-background-clip: text;
+    top: 0px;
+    left: 0;
+    z-index: -1;
+    transition: 1s;
+  }
+
+  span::after {
+    content: "PAULIS";
+    position: absolute;
+    color: transparent;
+    background-image: repeating-linear-gradient(
+      135deg,
+      transparent 0,
+      transparent 2px,
+      rgb(192, 83, 83) 2px,
+      rgb(192, 83, 83) 4px
+    );
+    -webkit-background-clip: text;
+    top: 0px;
+    left: 0px;
+    transition: 1s;
+  }
+
+  span:hover:before {
+    top: 10px;
+    left: 10px;
+  }
+
+  span:hover:after {
+    top: -10px;
+    left: -10px;
+  }
