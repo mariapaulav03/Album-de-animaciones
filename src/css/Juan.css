@@ -440,9 +440,9 @@ animation-duration: 3s;
       transparent 0,
       transparent 2px,
       rgb(206, 152, 152) 2px,
-      rgb(206, 152, 152) 4px
+      rgb(206, 152, 152) 4px,
     );
-    -webkit-background-clip: text;
+   background-clip: text;
     top: 0px;
     left: 0;
     z-index: -1;
@@ -458,9 +458,9 @@ animation-duration: 3s;
       transparent 0,
       transparent 2px,
       rgb(192, 83, 83) 2px,
-      rgb(192, 83, 83) 4px
+      rgb(192, 83, 83) 4px,
     );
-    -webkit-background-clip: text;
+   background-clip: text;
     top: 0px;
     left: 0px;
     transition: 1s;
