@@ -5,8 +5,39 @@ html, body {
     padding: 0;
     display: flex;
     width: 100%;
+    height:100%;
     flex-direction: column;
 }
+/*FONDO*/
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #f8d6ea 50%, #befcf8 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+
+  .bg3 {
+    animation-duration:5s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
 /*Titulo-cabecera*/
 .container{
     position: relative;
@@ -55,11 +86,11 @@ html, body {
     align-items: center;
     padding-inline-start: 0;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 150px;
-    row-gap: 150px;
+    column-gap: 60px;
+    row-gap: 40px;
 }
 .Menu ul li{
-    background-color: rgb(158, 245, 131);
+    background-color: rgb(164, 222, 255);
     display: flex;
     align-items: center;
     list-style: none;
@@ -73,9 +104,9 @@ html, body {
     transition: border 2s, background-color 2s, box-shadow 1s ;
 }
 .Menu ul li:hover{
-    background-color: rgb(117, 172, 62);
-    border: 1px solid green;
-    box-shadow: 4px 4px 14px 0px rgba(19, 111, 216, 0.30);
+    background-color: rgb(238, 186, 218);
+    border: 1px solid rgb(248, 166, 241);
+    box-shadow: 4px 4px 14px 0px rgba(243, 57, 212, 0.3);
 }
 
 
@@ -88,16 +119,6 @@ html, body {
     justify-content: space-around;
     border: 1px solid blueviolet;
 }
-.card{
-    display: flex;
-    width: 160px;
-    height: 160px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: skyblue;
-    margin: 20px;
-}
 
 .card2{
     display: flex;
@@ -108,9 +129,28 @@ html, body {
     justify-self: center;
     align-self: center;
     text-align: center;
-    background-color: skyblue;
     margin: 20px;
     transition: transform 3s;
+}
+.card2 img{
+    width: 200px;
+    height: 100px;
+}
+.card3{
+    display: flex;
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin: 20px;
+    transition: transform 3s;
+}
+.card3 img{
+    width: 200px;
+    height: 150px;
 }
 
 
@@ -144,66 +184,6 @@ html, body {
 }
 
 
-/*Cubos*/
-.cubo-P{
-    display: flex;
-    width: 200px;
-    height: 200px;
-    background-color: aqua;
-    animation: ease-in-out;
-    animation-name: slidein;
-    animation-duration: 3s;
-    justify-content: center;
-    font-size: 40px;
-    align-items: flex-start;
-}
-
-.cubo1{transition: width 2s, height 2s, background-color 2s,transform 5s, opacity 6s; }
-.cubo2{transition: width 2s, height 2s, background-color 2s,transform 5s,}
-
-
-
-.cubo1:hover{
-    background-color: burlywood;
-    width: 280px;
-    height: 280px;
-    transform: scale(0.5);
-    align-items: center;
-    opacity: 0;
-}
-
-.cubo2{
-    background-color: chartreuse;
-}
-
-.cubo2:hover{
-    background-color: burlywood;
-    width: 280px;
-    height: 280px;
-    transform: scale(1);
-    align-items: center;
-}
-
-.michi{
-    display: flex;
-    width: 50%;
-    height: auto;
-    animation: ease-in-out;
-    animation-name: "";
-    animation-iteration-count: infinite;
-    animation-duration: 1s;
-    transition: transform 3s;
-}
-
-.michi:hover{
-    transform:rotate(360deg) ;
-}
-
-.cubo3{
-animation-iteration-count: infinite;
-animation-name: temblar;
-animation-duration: 3s;
-}
 
 
 /* animacion */
@@ -396,12 +376,18 @@ animation-duration: 3s;
 /*Animaciones*/
 .animaciones{
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat( 1fr);
     border: 1px solid red;
-    width: 99%;
+    width: 50%;
+    padding: 20px;
     column-gap: 10px;
-    row-gap: 10px;
-    padding-left: 700px;
+    row-gap: 15px;
+}
+.imag img{
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    margin-left: 150px;
 }
 .imag img:hover{
     animation: translate-3d 3s 1;
@@ -409,69 +395,15 @@ animation-duration: 3s;
   }
   @keyframes translate-3d{
     40%{
-      transform: perspective(300px) translateZ(120px) rotateY(170deg);
+      transform: perspective(550px) translateZ(120px) rotateY(170deg);
     }
     50%{
-      transform: perspective(300px) translateZ(120px) rotateY(190deg);
+      transform: perspective(550px) translateZ(120px) rotateY(190deg);
     }
     80%{
-      transform: perspective(300px) translateZ(0px) rotateY(360deg)
+      transform: perspective(550px) translateZ(0px) rotateY(360deg)
     }
     100%{
-      transform: perspective(300px) rotateY(360deg);    
+      transform: perspective(550px) rotateY(360deg);
     }
-  }
-
-  span {
-    transform: translate(-50%, -50%);
-    display: grid;
-    color: #c55d5d;
-    font-size: 124px;
-    letter-spacing: 8px;
-    cursor: pointer;
-  }
-
-  span::before {
-    content: "PAULIS";
-    position: absolute;
-    color: transparent;
-    background-image: repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 2px,
-      rgb(206, 152, 152) 2px,
-      rgb(206, 152, 152) 4px,
-    );
-   background-clip: text;
-    top: 0px;
-    left: 0;
-    z-index: -1;
-    transition: 1s;
-  }
-
-  span::after {
-    content: "PAULIS";
-    position: absolute;
-    color: transparent;
-    background-image: repeating-linear-gradient(
-      135deg,
-      transparent 0,
-      transparent 2px,
-      rgb(192, 83, 83) 2px,
-      rgb(192, 83, 83) 4px,
-    );
-   background-clip: text;
-    top: 0px;
-    left: 0px;
-    transition: 1s;
-  }
-
-  span:hover:before {
-    top: 10px;
-    left: 10px;
-  }
-
-  span:hover:after {
-    top: -10px;
-    left: -10px;
   }
