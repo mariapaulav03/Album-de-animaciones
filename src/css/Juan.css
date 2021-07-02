@@ -164,7 +164,6 @@ html, body {
     grid-template-rows: auto;
     column-gap: 10px;
     row-gap: 15px;
-    border: 1px solid sandybrown;
 }
 @media screen and (min-width:421px) and (max-width:800px){
     .transiciones, .giros{
@@ -361,7 +360,6 @@ html, body {
 .zoom{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    border: 1px solid red;
     width: 50%;
     padding: 20px 0;
     column-gap: 10px;
@@ -376,34 +374,140 @@ html, body {
 /*Animaciones*/
 .animaciones{
     display:grid;
-    grid-template-columns: repeat( 1fr);
-    border: 1px solid red;
+    grid-template-columns: repeat(2, 1fr);
     width: 50%;
-    padding: 20px;
-    column-gap: 10px;
-    row-gap: 15px;
+    padding: 80px 0;
+    column-gap: 30px;
+    row-gap: 45px;
 }
-.imag img{
+.planet {
+    display: block;
     width: 300px;
     height: 300px;
-    justify-content: center;
-    margin-left: 150px;
-}
-.imag img:hover{
-    animation: translate-3d 3s 1;
-    backface-visibility: visible;
+    margin-left: -50px;
+    margin-right: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    border-radius: 50%;
+    background: #fcc96b;
+    background: rgb(252, 201, 107);
+    background: linear-gradient(
+      180deg,
+      rgba(252, 201, 107, 1) 0%,
+      rgba(252, 201, 107, 1) 15%,
+      rgba(247, 174, 1, 1) 15%,
+      rgba(247, 174, 1, 1) 19%,
+      rgba(252, 201, 107, 1) 19%,
+      rgba(252, 201, 107, 1) 22%,
+      rgba(247, 174, 1, 1) 22%,
+      rgba(247, 174, 1, 1) 28%,
+      rgba(252, 201, 107, 1) 28%,
+      rgba(252, 201, 107, 1) 31%,
+      rgba(252, 201, 107, 1) 33%,
+      rgba(252, 201, 107, 1) 36%,
+      rgba(247, 174, 1, 1) 36%,
+      rgba(247, 174, 1, 1) 48%,
+      rgba(252, 201, 107, 1) 48%,
+      rgba(252, 201, 107, 1) 55%,
+      rgba(247, 174, 1, 1) 55%,
+      rgba(247, 174, 1, 1) 66%,
+      rgba(252, 201, 107, 1) 66%,
+      rgba(252, 201, 107, 1) 70%,
+      rgba(247, 174, 1, 1) 70%,
+      rgba(247, 174, 1, 1) 73%,
+      rgba(252, 201, 107, 1) 73%,
+      rgba(252, 201, 107, 1) 82%,
+      rgba(247, 174, 1, 1) 82%,
+      rgba(247, 174, 1, 1) 86%,
+      rgba(252, 201, 107, 1) 86%
+    );
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.25),
+      inset 8px -4px 6px rgba(199, 128, 0, 0.5),
+      inset -8px 4px 8px rgba(255, 235, 199, 0.5),
+      inset 20px -5px 12px #f7ae01,
+      0 0 100px rgba(255, 255, 255, 0.35);
+    transform: rotateZ(-15deg);
   }
-  @keyframes translate-3d{
-    40%{
-      transform: perspective(550px) translateZ(120px) rotateY(170deg);
+
+  .planet::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 16px solid #7b6f42;
+    border-top-width: 0;
+    border-radius: 50%;
+    box-shadow: 0 -2px 0 #b1a693;
+    animation: rings1 0.8s infinite linear;
+  }
+
+  .planet::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 8px solid #b1a693;
+    border-top-width: 0;
+    border-radius: 50%;
+    box-shadow: 0 -2px 0 #7b6f42;
+    animation: rings2 0.8s infinite linear;
+  }
+
+  @keyframes rings1 {
+    0% {
+      transform: rotateX(65deg) rotateZ(0deg) scale(1.75);
     }
-    50%{
-      transform: perspective(550px) translateZ(120px) rotateY(190deg);
+    100% {
+      transform: rotateX(65deg) rotateZ(360deg) scale(1.75);
     }
-    80%{
-      transform: perspective(550px) translateZ(0px) rotateY(360deg)
+  }
+
+  @keyframes rings2 {
+    0% {
+      transform: rotateX(65deg) rotateZ(0deg) scale(1.7);
+    }
+    100% {
+      transform: rotateX(65deg) rotateZ(360deg) scale(1.7);
+    }
+  }
+  /*Animación 2.0*/
+
+  .bolita{
+    width:300px;
+    height: 300px;
+    background-color: skyblue;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: inset 0 0 30px 0 rgba(0,0,0,.5), 0 4px 10px 0 rgba(0,0,0,.5);
+    overflow: hidden;
+}
+.bolita:before, .bolita:after{
+    content:'';
+    position: absolute;
+    width:300px;
+    height: 300px;
+    top:-150px;
+    background-color: #fff;
+}
+.bolita:before{
+    border-radius: 45%;
+    background:rgba(255,255,255,.7);
+    animation:wave 5s linear infinite;
+}
+.bolita:after{
+    border-radius: 35%;
+    background:rgba(255,255,255,.3);
+    animation:wave 5s linear infinite;
+}
+@keyframes wave{
+    0%{
+        transform: rotate(0);
     }
     100%{
-      transform: perspective(550px) rotateY(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
